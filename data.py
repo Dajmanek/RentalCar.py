@@ -20,7 +20,7 @@ class Entry(abc.ABC):
 
     @abc.abstractmethod
     def is_similar(self, text: str) -> bool:
-        pass
+        raise NotImplementedError
 
     @abc.abstractmethod
     def serialize(self) -> str:
