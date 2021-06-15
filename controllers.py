@@ -471,6 +471,7 @@ class CarEditController(Controller):
             self.image = self.car.image
             self.pixmap = QPixmap()
             self.pixmap.loadFromData(self.image)
+        self._resize_image()
 
     def _resize_image(self, resize_event: QtGui.QResizeEvent = None):
         if self.pixmap is None:

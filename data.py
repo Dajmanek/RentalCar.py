@@ -68,9 +68,6 @@ class Car(Entry):
             hours += 1
         return hours * self.price
 
-    def set_image(self, image: bytes):
-        self.image = image
-
     def serialize(self) -> str:
         return str(self.id) + "," \
                + str(self.price) + "," \
@@ -255,7 +252,7 @@ class Data:
             car = deserialize(car_bytes.decode("iso-8859-2"), car_worker)
             if car is None:
                 continue
-            if car.image_bytes_len > 0:
+            if car.image_bytes_len  > 0:
                 car.image = self.file.read(car.image_bytes_len)
 
             self.car_set.add(car)
